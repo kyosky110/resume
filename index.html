@@ -4,22 +4,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>resume for huangnan</title>
-	<link rel="stylesheet" href="./css/style.css">
 	<script src="//at.alicdn.com/t/font_587007_s32fw9pupsgd5cdi.js"></script>
 	<style type="text/css">
-		.icon {
-			width: 1em;
-			height: 1em;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
+		.icon{width:1em;height:1em;vertical-align:-.15em;fill:currentColor;overflow:hidden}
+		.loading{width:200px;height:200px;position:relative}
+		.loading::after,.loading::before{content:'';width:0;height:0;border-radius:50%;background:#000;position:absolute;top:0;right:0;left:0;bottom:0;margin:auto;animation:loaddingAnimation 2s linear infinite}
+		.loading::after{animation-delay:1s}
+		@keyframes loaddingAnimation{
+			from{width:0;height:0;opacity:1}
+			to{width:50px;height:50px;opacity:0}
 		}
+		.site-welcome{display: none; position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #888;z-index: 1;justify-content: center;align-items: center}
+		.site-welcome.active { display: flex; }
 	</style>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
-	<div class="topNavBar">
+	<div id="siteWelcome" class="site-welcome active">
+		<div class="loading"></div>
+	</div>
+	<div id="topNavBar" class="topNavBar">
 		<div class="topNavBar-inner clearfix">
 			<a href="#" class="logo">
 				<span class="rs">RS</span>
@@ -28,13 +33,18 @@
 			<nav>
 				<ul class="clearfix">
 					<li>
-						<a href="#">关于</a>
+						<a href="#siteAbout">关于</a>
 					</li>
 					<li>
-						<a href="#">技能</a>
+						<a href="#siteSkills">技能</a>
 					</li>
 					<li>
-						<a href="#">作品</a>
+						<a href="#siteWorks">作品</a>
+						<ul class="submenu">
+							<li>作品1</li>
+							<li>作品2</li>
+							<li>作品3</li>
+						</ul>
 					</li>
 					<li>
 						<a href="#">博客</a>
@@ -58,7 +68,7 @@
 		</div>
 	</div>
 	<main>
-		<div class="userCard">
+		<div data-x id="siteAbout" class="userCard">
 			<div class="pictureAndText clearfix">
 				<div class="picture">
 					<img src="./img/avatar.jpg" width="299" height="347" alt="头像">
@@ -112,7 +122,7 @@
 			<br> 技能: Android开发, 前端开发, Node.js开发</p>
 	</main>
 
-	<section class="skills">
+	<section data-x id="siteSkills" class="skills">
 		<h2>技能</h2>
 		<ol class="clearfix">
 			<li>
@@ -154,7 +164,7 @@
 		</ol>
 	</section>
 
-	<section class="portfolio">
+	<section data-x id="siteWorks" class="portfolio">
 		<h2>作品集</h2>
 		<nav>
 			<ol class="clearfix">
@@ -191,7 +201,8 @@
 			</div>
 		</div>
 	</section>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+	<script src="./js/main.js"></script>
 </body>
 
 </html>
