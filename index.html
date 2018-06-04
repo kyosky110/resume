@@ -5,18 +5,7 @@
 	<meta charset="UTF-8">
 	<title>resume for huangnan</title>
 	<script src="//at.alicdn.com/t/font_587007_s32fw9pupsgd5cdi.js"></script>
-	<style type="text/css">
-		.icon{width:1em;height:1em;vertical-align:-.15em;fill:currentColor;overflow:hidden}
-		.loading{width:200px;height:200px;position:relative}
-		.loading::after,.loading::before{content:'';width:0;height:0;border-radius:50%;background:#000;position:absolute;top:0;right:0;left:0;bottom:0;margin:auto;animation:loaddingAnimation 2s linear infinite}
-		.loading::after{animation-delay:1s}
-		@keyframes loaddingAnimation{
-			from{width:0;height:0;opacity:1}
-			to{width:50px;height:50px;opacity:0}
-		}
-		.site-welcome{display: none; position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #888;z-index: 1;justify-content: center;align-items: center}
-		.site-welcome.active { display: flex; }
-	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -166,43 +155,33 @@
 
 	<section data-x id="siteWorks" class="portfolio">
 		<h2>作品集</h2>
-		<nav>
-			<ol class="clearfix">
-				<li id="portfolio1">所有</li>
-				<li id="portfolio2">框架</li>
-				<li id="portfolio3">原生JS&CSS</li>
-			</ol>
-			<div id="portfolioBar" class="bar state-1">
-				<div class="bar-inner">
 
+		<div id="mySlides">
+			<!-- Slider main container -->
+			<div class="swiper-container">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<img src="./img/works/nav-page.jpg" class="swiper-slide">
+					<img src="./img/works/apple-style-slides.jpg" class="swiper-slide">
+					<img src="./img/works/canvas.jpg" class="swiper-slide">
 				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+
 			</div>
-		</nav>
-		<script>
-			portfolio1.onclick = function () {
-				portfolioBar.className = 'bar state-1'
-			}
-			portfolio2.onclick = function () {
-				portfolioBar.className = 'bar state-2'
-			}
-			portfolio3.onclick = function () {
-				portfolioBar.className = 'bar state-3'
-			}
-		</script>
-		<div class="works" style="height: 597px;">
-			<div class="big" style="top: 0; left: 0;">
-				<img src="./img/1.jpg" alt="作品1">
-			</div>
-			<div class="small" style="top: 0; left: 645px;">
-				<img src="./img/2.jpg" alt="作品2">
-			</div>
-			<div class="small" style="top: 312px; left: 645px;">
-				<img src="./img/3.jpg" alt="作品3">
-			</div>
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
 	</section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-	<script src="./js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/js/swiper.min.js"></script>
+	<script src="/js/init-swiper.js"></script>
+	<script src="/js/stricky-topbar.js"></script>
+	<script src="/js/smoothly-navigation.js"></script>
+	<script src="js/auto-slide-up.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>
