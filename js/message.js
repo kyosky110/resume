@@ -22,7 +22,7 @@
         }
     }
 
-    var view = document.querySelector('section.message')
+    var view = View('section.message')
 
     var controller = {
         view: null,
