@@ -1,25 +1,4 @@
 
-
-// 声明一个 Todo 类型
-// var Message = AV.Object.extend('Message');
-// 新建一个 Todo 对象
-//  var message = new Message();
-//  message.set('content', '每周工程师会议，周一下午2点');
-//  message.set('name','xxx')
-//  message.save().then(function (message) {
-//    // 成功保存之后，执行其他逻辑.
-//    console.log('New object created with objectId: ' + message.content);
-//  }, function (error) {
-//    // 异常处理
-//    console.error('Failed to create new object, with error message: ' + error.message);
-//  });
-
-// var query = new AV.Query('Message');
-// query.find().then(function (results) {
-//     console.log(results)
-// }, function (error) {
-// });
-
 !function () {
     var model = {
         init: function () {
